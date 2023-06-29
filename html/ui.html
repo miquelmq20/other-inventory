@@ -1,0 +1,194 @@
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <!-- jQuery UI -->
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js" integrity="sha256-xH4q8N0pEzrZMaRmd7gQVcTZiFei+HfRTBPJ1OGXC0k=" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body style="background: none !important; overflow: none !important; width: 100vw !important; height: 100vh !important; position: absolute !important; top: 0 !important; left: 0 !important;">
+        <div id="qbcore-inventory">
+            <div class="inventory-info">
+                <div class="player-inv-info">
+                    <span id="player-inv-label">Inve</span><br>
+                </div>
+                <div class="other-inv-info">
+                    <span id="other-inv-label"></span><br>
+                </div>
+            </div>
+            <div class="inv-container">
+                <div class="ply-inv-container">
+                    <img src="./css/icons/mochila.png" style="position: absolute; width: 1.8vh; height:1.8vh; top:1.5vh; left:.75vw; filter: opacity(1);">
+                    <div class="inv-jugador-tit"><p style="margin-left: .9vw !important;">Inventario</p></div>
+                    <span id="player-inv-weight"></span>
+                    <div class="player-inventory" data-inventory="player"></div>
+                </div>
+                <div class="inv-options">
+                    <div class="inv-options-list">
+                        <input type="number" id="item-amount" class="inv-option-iteminput" min=0 value="0" oninput="validity.valid||(value='');"></input>
+                        <div class="inv-option-itemuse" id="item-use"><p></p></div>
+                        <div class="inv-option-itemdar" id="item-give"><p></p></div>
+                        <div class="inv-option-item-disabled"><p></p></div>
+                    </div>
+                </div>
+                <div class="oth-inv-container">
+                    <img src="./css/icons/mochila.png" style="position: absolute; width: 1.8vh; height:1.8vh; top:1.5vh; left:.75vw; filter: opacity(1);">
+                    <div class="other-inv-label" style="padding-left: 2.4vw !important;"><p></p>Segundo Inventario</div>
+                    <span id="other-inv-weight"></span>
+                    <div class="other-inventory" data-inventory="other">
+                            <!-- sexo.base -->
+                    </div>
+                </div>
+                <div class="invropa">
+                    <img src="./css/icons/perxitaa.png" style="position: absolute; width: 1.8vh; height:1.8vh; top:1.5vh; left:.75vw; filter: opacity(1);">
+                    <div class="inv-jugador-tit"><p style="margin-left: .9vw !important;">Menú de ropa</p></div>
+                    <div class="centrobloqueropa" style="margin-top: 6.7vh;">
+                        <div class="clothing" id="top"></div> <!--ESTO ES LA CHAQUETA (PARTE SUPERIOR)-->
+                        <div class="clothing" id="pants"></div>
+                        <div class="clothing" id="shoes"></div>
+                        <div class="clothing" id="shirt"></div> <!--ESTO ES LA CAMISA (PARTE INFERIOR)-->
+                        <div class="clothing" id="mask"></div>
+                        <div class="clothing" id="hat"></div>
+                        <div class="clothing" id="hair"></div>
+                        <div class="clothing" id="neck"></div>
+                        <div class="clothing" id="ear"></div>
+                        <div class="clothing" id="glasses"></div>
+
+                        <div class="clothing" id="bag"></div>
+                        <div class="clothing" id="bracelet"></div>
+                        <div class="clothing" id="watch"></div>
+
+                        <div class="clothing" id="reset"></div>
+
+                        <div class="clothing" id="gloves"></div>
+                        <div class="clothing" id="visor"></div>
+                        <div class="clothing" id="vest"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="ply-hotbar-inventory" data-inventory="hotbar">
+                    <!-- sexo.base -->
+            </div>
+            <div class="ply-iteminfo-container">
+                <div class="ply-iteminfo">
+                    <div class="iteminfo-content">
+                        <div class="item-info-title"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="ply-iteminfo-container1">
+                <div class="ply-iteminfo">
+                    <div class="iteminfo-content">
+                        <div class="item-info-line"></div>
+                        <div class="item-info-description"></div>
+                    </div>
+                </div>
+            </div>
+            <!--Animaciones-->
+            <div class="inv-anims">
+                <img src="./css/icons/anims.png" style="position: absolute; width: 1.8vh; height:1.8vh; top:1.5vh; left:.75vw; filter: opacity(1);">
+                <div class="inv-jugador-tit"><p style="margin-left: .9vw !important;">Animaciones</p></div>
+                <div class="inv-anims-int">
+                    <div class="menu-container">
+                        <span id="home" class="material-icons md-18 sidebar" style="color: white; transition: all 0.2s ease-in-out;">home</span>
+                        <span id="favorite" class="material-icons md-18 sidebar" style="color: white; display: none !important;">bookmark</span>
+                        <span id="dances" class="material-icons md-18 sidebar" style="color: white;">nightlife</span>
+                        <span id="scenarios" class="material-icons md-18 sidebar" style="color: white;">emoji_people</span>
+                        <span id="walks" class="material-icons md-18 sidebar" style="color: white;">directions_walk</span>
+                        <span id="props" class="material-icons md-18 sidebar" style="color: white;">emoji_objects</span>
+                        <span id="expressions" class="material-icons md-18 sidebar" style="color: white;">sentiment_satisfied_alt</span>
+                        <span id="shared" class="material-icons md-18 sidebar" style="color: white;">people</span>
+                        <span id="settings" class="material-icons md-18 sidebar" style="color: white; display: none !important;">settings</span>
+                        <span id="exit" class="material-icons md-18 sidebar" style="color: white; display: none !important;">power_settings_new</span>
+                    </div>
+                    <div class="anims-container">
+                        <nav class="navbar">
+                            <div>
+                                <input id="search-bar" class="search-bar" placeholder="Buscar una animación...">
+                            </div>
+                            <span id="cancel" class="material-icons md-18 controls" style="color: white; font-size:1.4vh;margin-bottom:-.5vh;">pause</span>
+                            <span id="delete" class="material-icons md-18 controls" style="color: white; display: none;">auto_fix_high</span>
+                            <span id="movement" class="material-icons md-18 controls" style="color: white; font-size:1.4vh; margin-left:-.9vw;margin-bottom:-.5vh;">control_camera</span>
+                            <span id="loop" class="material-icons md-18 controls" style="color: white; font-size:1.4vh; margin-left:-.9vw; margin-bottom:-.5vh;">loop</span>
+                        </nav>
+                        <main id="anims-holder" class="anims-block">
+                        </main>
+                    </div>
+                    <div class="settings-container" style="display: none !important;">
+                        <span class="settings-title">Settings</span>
+                        <hr style="margin-top: 2.5%; margin-bottom: 2.5%;" width="80%">
+                        <div>
+                            <span>Animation Duration</span>
+                            <input id="set-duration" type="number" placeholder="1500" maxlength="5" min="1000" max="15000" oninput="javascript: if (this.value >= this.max && this.value.length >= this.maxLength) this.value = this.max;">
+                        </div>
+                        <div>
+                            <span>Cancel Animation Key</span>
+                            <input id="set-cancel" type="number" placeholder="38" maxlength="3" min="0" max="360" oninput="javascript: if (this.value >= this.max && this.value.length >= this.maxLength) this.value = this.max;">
+                        </div>
+                        <div>
+                            <span>Favorite Animation</span>
+                            <input id="set-emote" type="text" placeholder="emote1">
+                        </div>
+                        <div>
+                            <span>Favorite Animation Key</span>
+                            <input id="set-key" type="number" placeholder="38" maxlength="3" min="0" max="360" oninput="javascript: if (this.value >= this.max && this.value.length >= this.maxLength) this.value = this.max;">
+                        </div>
+                        <hr style="margin-top: 2.5%; margin-bottom: 2.5%;" width="80%">
+                        <button id="reset-duration">Reset Animation Duration</button>
+                        <button id="reset-cancel">Reset Cancel Animation Key</button>
+                        <button id="reset-fav">Reset Favorite Animation</button>
+                        <button id="reset-key">Reset Favorite Animation Key</button>
+                        <hr style="margin-top: 2.5%; margin-bottom: 2.5%;" width="80%">
+                        <button id="reset-favs">Reset Favorite Anims</button>
+                        <button id="save-settings" style="margin-bottom: 5%">Save Settings</button>
+                    </div>
+                </div>
+            </div>
+            <!--Animaciones-->
+            <div class="inv-background"></div>
+        </div>
+        <div class="weapon-attachments-container">
+            <div class="weapon-attachments-background">
+                <div class="weapon-attachments-container-title">Pistola | <span style="font-size: 2vh;">9mm</span></div>
+                <div class="weapon-attachments-container-description">Arma de fuego</div>
+                <div class="weapon-attachments-durability-text">Durabilidad</div>
+                <div class="weapon-attachments-container-details"><!--<span style="font-weight: bold; letter-spacing: .1vh;">Serial:</span><br> 12345678<br><br><span style="font-weight: bold; letter-spacing: .1vh;">Durabilidad</span>--> <div class="weapon-attachments-container-detail-durability"></div></div>
+            </div>
+            <img src="./attachment_images/weapon_pistol.png" class="weapon-attachments-container-image">
+
+            <div class="weapon-attachments-title"><span style="font-weight: bold; letter-spacing: .1vh;">Accesorios</span></div>
+            <div class="weapon-attachments">
+            </div>
+
+            <div class="weapon-attachments-remove"><i class="fas fa-trash"></i></div>
+
+            <div class="weapon-attachments-back"><p>Atras</p></div>
+        </div>
+        <!--<div class="combine-option-container">
+            <div class="btn-combine CombineItem"><p>Combine</p></div>
+            <div class="btn-combine SwitchItem"><p>Switch</p></div>
+        </div>-->
+        <div class="itemboxes-container"></div>
+        <div class="itembox-container template"></div>
+        <div class="requiredItem-container">
+        </div>
+        <div class="z-hotbar-inventory">
+            <!-- auto generated -->
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="js/app.js" type="text/javascript"></script>
+        <script type="module" src='./js/script.js'></script>
+        <script type="module" src='./js/listeners.js'></script>
+    </body>
+</html>
